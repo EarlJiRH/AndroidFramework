@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ButtonEditText">
+        <attr format="boolean" name="isEnabledShow"/>
+        <attr format="boolean" name="isShow"/>
+        <attr format="boolean" name="isTextInput"/>
+        <attr format="reference" name="bitmapDelete"/>
+        <attr format="color" name="colorShow"/>
+        <attr format="reference" name="bitmapShow"/>
+        <attr format="reference" name="bitmapHidden"/>
+        <attr format="dimension" name="imageDMargin"/>
+        <attr format="dimension" name="imageSHMargin"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightScrollView">
+        <attr format="dimension" name="maxHeight"/>
+    </declare-styleable>
+</resources>

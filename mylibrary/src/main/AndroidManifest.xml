@@ -1,0 +1,76 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="a.f">
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+<!--    <uses-library-->
+<!--        android:name="org.apache.http.legacy"-->
+<!--        android:required="false"-->
+<!--        tools:ignore="WrongManifestParent" />-->
+    <application>
+
+        <!-- 图片浏览 界面 -->
+        <activity
+            android:name="a.f.ui.imagebrowse.ImageBrowseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AFFullscreenTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- 上传日志 后台服务 -->
+        <service
+            android:name="a.f.service.UploadLogService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="a.f.service.UploadLogService" />
+            </intent-filter>
+        </service>
+        <!-- 检查更新App 后台服务 -->
+        <service
+            android:name="a.f.service.CheckUpdateService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="a.f.service.CheckUpdateService" />
+            </intent-filter>
+        </service>
+        <!-- TBS内核首次Dex加载时触发并执行dex2oat任务 后台服务 -->
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="dexopt"
+            android:process=":dexopt">
+            <intent-filter android:priority="1000">
+                <action android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService" />
+            </intent-filter>
+        </service>
+
+        <!-- 兼容 API24+ StrictMode API 规则 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:name,android:authorities,android:exported,android:grantUriPermissions">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:name,android:resource" />
+        </provider>
+    </application>
+
+</manifest>
