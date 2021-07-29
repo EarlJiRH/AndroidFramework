@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">AndroidFramework</string>
-
-
     <string name="hint">提示</string>
     <string name="hintAdd">添加</string>
     <string name="hintAddFailed">添加失败</string>
