@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+
+
+        </KeyFrameSet>
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@+id/hpSearchInput" />
+        <!--        滑动-->
+        <!--        <OnSwipe />-->
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/hpDiscount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toBottomOf="@id/hpSearchInput"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/hpSearchInput" />
+
+        <Constraint
+            android:id="@+id/hpLocation"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@mipmap/home_location"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:hint="定位中"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/C_DDDDDD"
+            android:textSize="17sp"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toBottomOf="@id/hpSearchInput"
+            motion:layout_constraintStart_toEndOf="@id/hpDiscount"
+            motion:layout_constraintTop_toTopOf="@id/hpSearchInput" />
+
+        <Constraint
+            android:id="@+id/hpSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/view_bg_hp_search"
+            android:drawableStart="@mipmap/search"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:hint="搜索停车场地址"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:textColor="@color/C_666666"
+            android:textColorHint="@color/C_999999"
+            android:textSize="12sp"
+            motion:bitmapDelete="@mipmap/delete_input"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

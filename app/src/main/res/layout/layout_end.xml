@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/C_App_Main"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <a.f.widget.customtextview.ButtonEditText
+            android:id="@+id/hpSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/view_bg_hp_search"
+            android:drawableStart="@mipmap/search"
+            android:drawablePadding="6dp"
+            android:hint="搜索停车场地址"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp"
+            android:textColor="@color/C_666666"
+            android:textColorHint="@color/C_999999"
+            android:textSize="12sp"
+            app:bitmapDelete="@mipmap/delete_input" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
