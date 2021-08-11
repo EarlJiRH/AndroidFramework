@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:background="@color/C_App_Main"
-        android:orientation="horizontal"
         app:layoutDescription="@xml/activity_main_scene"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

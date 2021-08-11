@@ -4,10 +4,6 @@ import android.content.IntentFilter;
 import android.os.Handler;
 
 import com.jess.arms.base.BaseApplication;
-import com.tencent.smtt.sdk.QbSdk;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import a.f.receiver.NetStateReceiver;
 import a.f.utils.UnCapturedExceptionRecord;
@@ -44,11 +40,11 @@ public class BaseApp extends BaseApplication {
         BaseApp.super.onCreate();
         UnCapturedExceptionRecord.getInstance().init();
 //        QbSdk.disableSensitiveApi();
-        Map<String, Object> tbsMap = new HashMap<>();
-        tbsMap.put("use_speedy_classloader", true);
-        tbsMap.put("use_dexloader_service", true);
-        QbSdk.initTbsSettings(tbsMap);
-        QbSdk.initX5Environment(this, null);
+//        Map<String, Object> tbsMap = new HashMap<>();
+//        tbsMap.put("use_speedy_classloader", true);
+//        tbsMap.put("use_dexloader_service", true);
+//        QbSdk.initTbsSettings(tbsMap);
+//        QbSdk.initX5Environment(this, null);
         registerReceiver(new NetStateReceiver(), new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 

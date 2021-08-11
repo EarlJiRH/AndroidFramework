@@ -77,6 +77,7 @@ dependencies {
     api 'org.greenrobot:greendao:3.3.0'
     api 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.2.1'
 
+    api 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx'
     api 'com.tencent.tbs.tbssdk:sdk:43993'
 
     testImplementation 'junit:junit:4.12'
